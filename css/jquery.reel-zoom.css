@@ -1,0 +1,150 @@
+.viewer{
+  overflow: hidden;
+  border: 1px solid #999;
+  position: relative;
+  margin: 5px;
+  box-sizing: border-box;
+}
+.viewer img{ 
+  position: relative;
+}
+.botMAS {
+  width: 19px;
+  height: 19px;
+  background-color: #afafaf;
+  color: #e1e1e1;
+  border-radius: 2px;
+  padding: 1px 5px;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  z-index: 10;
+}
+.botMENOS {
+  width: 19px;
+  height: 19px;
+  background-color: #afafaf;
+  color: #e1e1e1;
+  border-radius: 2px;
+  padding: 0px 7px;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 4px;
+  left: 27px;
+  z-index: 10;
+}
+.botPLAY {
+  width: 19px;
+  height: 19px;
+  background-color: #afafaf;
+  border-radius: 2px;
+  padding: 3px 5px;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 27px;
+  left: 4px;
+  z-index: 10;
+  font-size: 11px;
+  color: #fff;
+}
+.botPLAY.running {
+  background-color: green !important;
+  padding: 1px 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.botMENOS, .botMAS, .botPLAY, .botSTOP {
+  -webkit-transition: background-color 1000ms ease-out, border 1000ms ease-out, color 1000ms ease-out;
+  -moz-transition: background-color 1000ms ease-out, border 1000ms ease-out, color 1000ms ease-out;
+  transition: background-color 1000ms ease-out, border 1000ms ease-out, color 1000ms ease-out;
+}
+.botMENOS.active, .botMAS.active, .botPLAY.paused {
+  background-color: #555;
+  color: #fff;
+  cursor: pointer;
+}
+.content {
+  width: 450px;
+  text-align: center;
+  margin: 200px auto;
+}
+.viewer img.ui-draggable { cursor: move !important; }
+.handlerDragX {
+  width: 84%;
+  margin-left: 8%;
+  height: 15px;
+  position: absolute;
+  top: -20px;
+  box-sizing: border-box;
+  z-index: 10;
+  opacity: 0;
+}
+.handlerDragX .line {
+  width: 100%;
+  height: 1px;
+  position: relative;
+  top: 8px;
+  background-color: #e1e1e1;
+}
+.handlerDragX .handler {
+  width: 30px;
+  height: 6px;
+  position: relative;
+  background: #555;
+  border-radius: 3px;
+  z-index: 1;
+  margin-top: 5px;
+  left: 48%;
+  cursor: pointer;
+}
+.handlerDragY {
+  width: 15px;
+  height: 84%;
+  top: 8%;
+  position: absolute;
+  box-sizing: border-box;
+  z-index: 10;
+  right: -20px;
+  opacity: 0;
+}
+.handlerDragY .line {
+  height: 100%;
+  width: 1px;
+  position: relative;
+  right: -4px;
+  background-color: #e1e1e1;
+}
+.handlerDragY .handler {
+  width: 6px;
+  height: 30px;
+  position: absolute;
+  background: #555;
+  border-radius: 3px;
+  z-index: 1;
+  margin-left: 1px;
+  top: 48%;
+  cursor: pointer;
+}
+
+.boxLoading {
+  z-index: -1; /* -1 */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.boxLoading .litleBox {
+  width: 100px;
+  height: 20px;
+  position: relative;
+  top: 48%;
+  margin: 0 auto;
+}
+.boxLoading .litleBox span {
+  opacity: 0;
+  width: 14px;
+  height: 20px;
+  float: left;
+  margin-left: 2px;
+  background-color: rgba(0,0,0,.5);
+}
